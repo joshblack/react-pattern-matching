@@ -1,0 +1,16 @@
+# Ignore generated folders
+node_modules
+lib
+umd
+
+# Logs
+*.log
+
+# Editor
+.DS_Store
+*.swp
+.idea
+.vscode
+
+# Coverage directory used by tools like Istanbul
+coverage

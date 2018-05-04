@@ -1,0 +1,100 @@
+{
+  "name": "react-pattern-matching",
+  "description": "Generic Pattern and Match components to help with all your conditional rendering needs.",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "umd": "umd/react-pattern-matching",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "umd"
+  ],
+  "keywords": [
+    "react",
+    "conditional",
+    "rendering",
+    "components",
+    "pattern",
+    "matching"
+  ],
+  "scripts": {
+    "build": "yarn clean && yarn build:cjs && yarn build:umd",
+    "build:cjs": "babel src -d lib --ignore __tests__",
+    "build:umd": "rollup -c config/rollup.config.js",
+    "clean": "rimraf lib umd",
+    "commit": "giz cz",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "precommit": "lint-staged",
+    "prepare": "yarn build",
+    "prettier": "prettier --write **/*.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "lodash.isequal": "^4.5.0",
+    "lodash.pick": "^4.4.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^4.2.1",
+    "@commitlint/config-angular": "^4.2.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "enzyme-to-json": "^3.1.4",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^4.3.0",
+    "prettier": "^1.7.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-test-renderer": "^16.0.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.2.4",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-angular"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier",
+      "git add"
+    ]
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/config/setup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "prettier": {
+    "jsxBracketSameLine": true,
+    "printWidth": 80,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}
