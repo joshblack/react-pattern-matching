@@ -13,17 +13,17 @@ const babelConfig = {
 };
 
 export default {
-  name: 'react-pattern-matching',
   input: path.resolve(__dirname, '../src/index.js'),
   output: {
+    name: 'react-pattern-matching',
     file: path.resolve(__dirname, '../umd/react-pattern-matching.js'),
     format: 'umd',
+    globals: {
+      react: 'React',
+      'prop-types': 'PropTypes',
+    },
   },
   external: ['react', 'prop-types'],
-  globals: {
-    react: 'React',
-    'prop-types': 'PropTypes',
-  },
   plugins: [
     nodeResolve({
       main: true,

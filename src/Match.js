@@ -1,10 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Match = ({ render, ...rest }) => render(rest);
+const Match = ({ children, render, ...rest }) => {
+  if (render) {
+    return render(rest);
+  }
+
+  if (children) {
+    return children(rest);
+  }
+
+  return null;
+};
 
 Match.propTypes = {
-  render: PropTypes.func.isRequired,
+  children: PropTypes.func,
+  render: PropTypes.func,
 };
 
 export default Match;

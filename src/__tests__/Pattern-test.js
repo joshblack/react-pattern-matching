@@ -135,7 +135,7 @@ describe('Pattern component', () => {
       },
     };
     let wrapper = mount(
-      <Pattern match={match} only={true}>
+      <Pattern match={match} first>
         <Match foo={{ bar: 'baz' }} render={() => <div />} />
       </Pattern>
     );
@@ -143,7 +143,7 @@ describe('Pattern component', () => {
     expect(wrapper.find('div').length).toBe(0);
 
     wrapper = mount(
-      <Pattern match={match} isMatch={matchers.deepMatch} only={true}>
+      <Pattern match={match} isMatch={matchers.deepMatch} first>
         <Match foo={{ bar: 'baz' }} render={() => <div />} />
       </Pattern>
     );

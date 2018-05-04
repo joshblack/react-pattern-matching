@@ -8,7 +8,7 @@ cache:
     - node_modules
 
 script:
-  - yarn test
+  - yarn ci-check
 
 notifications:
   email: false

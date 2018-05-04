@@ -1,5 +1,6 @@
 # `react-pattern-matching`
 
+[![Build Status](https://travis-ci.org/joshblack/react-pattern-matching.svg?branch=master)](https://travis-ci.org/joshblack/react-pattern-matching)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 > `Pattern` and `Match` components, with generic matching tools, to
@@ -25,12 +26,12 @@ yarn add react-pattern-matching
 The main component exported by `react-pattern-matching` is the `<Pattern>` component.
 `Pattern` takes in a couple props, namely:
 
-- `match` which is an object that contains a mapping of the props and their
+* `match` which is an object that contains a mapping of the props and their
   values that you want to match against.
-- `first`: by default, `Pattern` will render *every* child that matches the
+* `first`: by default, `Pattern` will render _every_ child that matches the
   `match` criteria with the given matcher. If you don't want this behavior,
   setting the `first` prop to true will make `Pattern` render only the first match.
-- `isMatch` an optional prop that allows you to implement your own matching
+* `isMatch` an optional prop that allows you to implement your own matching
   logic, or use one of the strategies exported in `matchers`.
 
 We can use `Pattern` in the following way:
@@ -72,11 +73,6 @@ const FirstMatch = () => (
 );
 ```
 
-### Further Examples
-
-- [Toggle based on state](https://codesandbox.io/embed/j312oq1ww3)
-- [Toggle based on dynamic response](https://codesandbox.io/embed/ll58w8zm)
-
 ### Inspiration
 
-- https://www.youtube.com/watch?v=MkdV2-U16tc
+* https://www.youtube.com/watch?v=MkdV2-U16tc
